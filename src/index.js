@@ -9,6 +9,12 @@ ReactDOM.render(
   <React.StrictMode>
     <Router>
       <Font>
+      <style jsx global>{`
+      body {
+        margin: 0px;
+        padding: 0px;
+      }
+    `}</style>
     <App />
     </Font>
     </Router>
