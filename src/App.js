@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { Route, Switch, Link } from 'react-router-dom';
-import HomePage from './HomePage';
+import { Route, Switch, Link, BrowserRouter as Router } from 'react-router-dom';
+import HomePage from './Registrations';
 import { NavBarStyled, LinkContainer } from './Layout/NavBar.styled';
 import SNSWLogo from './imgs/SNSW-logos.png';
 import LandingPage from './LandingPage/LandingPage';
@@ -31,6 +31,7 @@ const App = () => {
   }, []);
   return (
     <>
+    <Router>
       <NavBarStyled>
         <div>
           <img src={SNSWLogo} alt="NSW Government and Service NSW Logo"></img>
@@ -45,12 +46,13 @@ const App = () => {
 
         <Switch>
           <Route path="/Registrations">
-            <HomePage vehicleDetails={vehicleData} loading={loading} />
+            <HomePage vehicleDetails={vehicleData} loading={loading}/>
           </Route>
           <Route path="/">
             <LandingPage/>
           </Route>
         </Switch>
+        </Router>
     </>
   );
 }

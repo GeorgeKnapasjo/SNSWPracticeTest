@@ -15,12 +15,11 @@ export const CardContainer = styled.div`
 `;
 
 export const LoadingSpinnerContainer = styled.div`
-    height:80px;
-    width:100px;
+    height:120px;
+    width:120px;
     margin:auto;
     margin-top:3rem;
     ${LoadingSpinner}{
-        padding:auto;
         margin:auto;
     }
 `;

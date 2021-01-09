@@ -7,7 +7,6 @@ import {Font} from './index.styled';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Router>
       <Font>
       <style jsx global>{`
       body {
@@ -15,9 +14,10 @@ ReactDOM.render(
         padding: 0px;
       }
     `}</style>
+    {/* <Router> */}
     <App />
+    {/* </Router> */}
     </Font>
-    </Router>
   </React.StrictMode>,
   document.getElementById('root')
 );
