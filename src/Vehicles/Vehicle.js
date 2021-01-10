@@ -25,10 +25,8 @@ const Vehicle = ({ details }) => {
             month: 'long',
             day: '2-digit'
         })
-            .format(date)
-            // console.log(expiryDate)
-            // console.log(date)
-            return (formatedDate)
+            .format(date);
+            return (formatedDate);
     }
 
     const formatVin = (vin) => {
@@ -40,7 +38,7 @@ const Vehicle = ({ details }) => {
                 formatedVin.push(vin[i])
             }
         }
-        return formatedVin
+        return formatedVin;
     }
 
     //data returned from API may be incorrect, thus checking against most current date
@@ -48,10 +46,10 @@ const Vehicle = ({ details }) => {
         const expiry = new Date(expDate);
         expiry.setDate(expiry.getDate() - 1);
         if (expiry < new Date()) {
-            return 'Expired'
+            return 'Expired';
         }
         else {
-            return 'Active'
+            return 'Active';
         }
     }
 
@@ -66,7 +64,7 @@ const Vehicle = ({ details }) => {
             month: '2-digit'
         })
             .format(diff)
-        return (formatedDate)
+        return (formatedDate);
     }
     return (
         <>

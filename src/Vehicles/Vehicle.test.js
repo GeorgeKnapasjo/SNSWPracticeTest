@@ -70,54 +70,54 @@ describe('<Vehicle/>', () => {
     it('Renders', ()=>{
         const div = document.createElement('div');
         ReactDOM.render(<Vehicle details={vehicleDetails}/>, div);
-    })
+    });
     describe('Displays correct vehicle details', () => {
 
         it('Displays the correct vehicles details', () => {
             const {getByTestId} = render(<Vehicle details={vehicleDetails}/>);
             expect(getByTestId('vehicle-details')).toHaveTextContent('White Mazda CX3');
-        })
+        });
         it('Displays the correct vehicles details', () => {
             const {getByTestId} = render(<Vehicle details={vehicleDetails}/>);
             expect(getByTestId('vehicle-plate-number')).toHaveTextContent('ABC123');
-        })
+        });
         it('Displays the correct vehicles details', () => {
             const {getByTestId} = render(<Vehicle details={vehicleDetails}/>);
             expect(getByTestId('vehicle-vin')).toHaveTextContent('******BCDE');
-        })
+        });
         it('Displays the correct vehicles details', () => {
             const {getByTestId} = render(<Vehicle details={vehicleDetails}/>);
             expect(getByTestId('vehicle-shape')).toHaveTextContent('SUV');
-        })
+        });
         it('Displays the correct vehicles details', () => {
             const {getByTestId} = render(<Vehicle details={vehicleDetails}/>);
             expect(getByTestId('vehicle-tare-weight')).toHaveTextContent('1540');
-        })
+        });
         it('Displays the correct vehicles details', () => {
             const {getByTestId} = render(<Vehicle details={vehicleDetails}/>);
             expect(getByTestId('vehicle-gross-weight')).toHaveTextContent('1600');
-        })
-    })
+        });
+    });
     describe('Displays correct registration details', ()=>{
         it('Displays the correct vehicles details', () => {
             const {getByTestId} = render(<Vehicle details={vehicleDetails}/>);
             expect(getByTestId('registration-status')).toHaveTextContent('Active');
-        })
+        });
         it('Displays the correct vehicles details', () => {
             const {getByTestId} = render(<Vehicle details={vehicleDetails}/>);
             expect(getByTestId('registration-remaining')).toHaveTextContent('07 months');
-        })
+        });
         it('Displays the correct vehicles details', () => {
             const {getByTestId} = render(<Vehicle details={vehicleDetails}/>);
             expect(getByTestId('registration-expiry')).toHaveTextContent('20 July 2021');
-        })
+        });
         it('Displays the correct vehicles details', () => {
             const {getByTestId} = render(<Vehicle details={vehicleDetails}/>);
             expect(getByTestId('registration-insurer-name')).toHaveTextContent('NRMA');
-        })
+        });
         it('Displays the correct vehicles details', () => {
             const {getByTestId} = render(<Vehicle details={vehicleDetails}/>);
             expect(getByTestId('registration-insurer-code')).toHaveTextContent(27);
-        })
-    })
-})
+        });
+    });
+});

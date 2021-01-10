@@ -48,7 +48,3 @@ export const BannerWrapper = styled.div`
         }
     }
 `;
-
-export const PopularPages = styled.div`
-    
-`;

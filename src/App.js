@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Route, Switch, Link, BrowserRouter as Router } from 'react-router-dom';
 import HomePage from './Registrations';
-import { NavBarStyled, LinkContainer } from './Layout/NavBar.styled';
+import { NavBarStyled, LinkContainer } from './App.styled';
 import SNSWLogo from './imgs/SNSW-logos.png';
 import LandingPage from './LandingPage/LandingPage';
 
