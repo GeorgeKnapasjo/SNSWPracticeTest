@@ -98,7 +98,26 @@ describe('<Vehicle/>', () => {
             expect(getByTestId('vehicle-gross-weight')).toHaveTextContent('1600');
         })
     })
-    describe('', ()=>{
-        
+    describe('Displays correct registration details', ()=>{
+        it('Displays the correct vehicles details', () => {
+            const {getByTestId} = render(<Vehicle details={vehicleDetails}/>);
+            expect(getByTestId('registration-status')).toHaveTextContent('Active');
+        })
+        it('Displays the correct vehicles details', () => {
+            const {getByTestId} = render(<Vehicle details={vehicleDetails}/>);
+            expect(getByTestId('registration-remaining')).toHaveTextContent('07 months');
+        })
+        it('Displays the correct vehicles details', () => {
+            const {getByTestId} = render(<Vehicle details={vehicleDetails}/>);
+            expect(getByTestId('registration-expiry')).toHaveTextContent('20 July 2021');
+        })
+        it('Displays the correct vehicles details', () => {
+            const {getByTestId} = render(<Vehicle details={vehicleDetails}/>);
+            expect(getByTestId('registration-insurer-name')).toHaveTextContent('NRMA');
+        })
+        it('Displays the correct vehicles details', () => {
+            const {getByTestId} = render(<Vehicle details={vehicleDetails}/>);
+            expect(getByTestId('registration-insurer-code')).toHaveTextContent(27);
+        })
     })
 })

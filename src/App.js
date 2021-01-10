@@ -24,8 +24,7 @@ const App = () => {
       })
     }
     catch(e){
-      setVehicleData('Error, unable to fetch data, please try again later');
-      console.log(e)
+      setVehicleData(<div style={{textAlign:'center'}}><h2>Error fetching information, please try again later</h2></div>);
       setLoading(false);
     }
   }, []);
@@ -37,10 +36,10 @@ const App = () => {
           <img src={SNSWLogo} alt="NSW Government and Service NSW Logo"></img>
         </div>
         <LinkContainer>
-        <Link to='/'>Home</Link>
-        <Link to='/'>Business </Link>
-        <Link to='/'>Find Locations</Link>
-        <Link to='/Registrations'>Registrations</Link>
+        <Link data-testid='home-link' to='/'>Home</Link>
+        <a data-testid='business-link' href='https://mybusiness.service.nsw.gov.au/'>Business </a>
+        <a data-testid='locations-link' href='https://www.service.nsw.gov.au/service-centre'>Find Locations</a>
+        <Link data-testid='registrations-link' to='/Registrations'>Registrations</Link>
         </LinkContainer>
           </NavBarStyled>
 

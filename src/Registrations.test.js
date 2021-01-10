@@ -59,7 +59,7 @@ describe('<Registrations/>', ()=>{
     })
     it('Displays registration expiry in correct format', ()=>{
         const {getByTestId} = render(<Registrations vehicleDetails={vehicleDetails} loading={false}/>);
-        expect(getByTestId('registration-expiry')).toHaveTextContent('21 July 2021');
+        expect(getByTestId('registration-expiry')).toHaveTextContent('20 July 2021');
     })
     it('Displays correct registration status', ()=>{
         const {getByTestId} = render(<Registrations vehicleDetails={vehicleDetails} loading={false}/>);

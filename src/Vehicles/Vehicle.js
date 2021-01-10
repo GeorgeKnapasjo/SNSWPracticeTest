@@ -19,13 +19,16 @@ const Vehicle = ({ details }) => {
 
     const formatDate = (expiryDate) => {
         var date = new Date(expiryDate);
+        date.setDate(date.getDate() - 1);
         const formatedDate = new Intl.DateTimeFormat('en-AU', {
             year: 'numeric',
             month: 'long',
             day: '2-digit'
         })
             .format(date)
-        return (formatedDate)
+            // console.log(expiryDate)
+            // console.log(date)
+            return (formatedDate)
     }
 
     const formatVin = (vin) => {
@@ -43,6 +46,7 @@ const Vehicle = ({ details }) => {
     //data returned from API may be incorrect, thus checking against most current date
     const RegistrationStatus = (expDate) => {
         const expiry = new Date(expDate);
+        expiry.setDate(expiry.getDate() - 1);
         if (expiry < new Date()) {
             return 'Expired'
         }
@@ -53,6 +57,7 @@ const Vehicle = ({ details }) => {
 
     const RegistrationCalculator = (expDate) => {
         const expiry = new Date(expDate)
+        expiry.setDate(expiry.getDate() - 1);
         if (expiry < new Date()) {
             return 0;
         }

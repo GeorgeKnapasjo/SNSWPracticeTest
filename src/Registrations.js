@@ -14,6 +14,7 @@ const HomePage = ({ vehicleDetails, loading }) => {
     const [pageData, setPageData] = useState();
     const FormatDate = (expiryDate) => {
         var date = new Date(expiryDate);
+        date.setDate(date.getDate() - 1);
         const formatedDate = new Intl.DateTimeFormat('en-AU', {
             year: 'numeric',
             month: 'long',
@@ -38,6 +39,7 @@ const HomePage = ({ vehicleDetails, loading }) => {
     }
     const RegistrationCalculator = (expDate) => {
         const expiry = new Date(expDate)
+        expiry.setDate(expiry.getDate() - 1);
         if (expiry < new Date()) {
             return 0;
         }
@@ -51,6 +53,7 @@ const HomePage = ({ vehicleDetails, loading }) => {
 
     const RegistrationStatus = (expDate) => {
         const expiry = new Date(expDate);
+        expiry.setDate(expiry.getDate() - 1);
         if (expiry < new Date()) {
             return 'Expired'
         }
