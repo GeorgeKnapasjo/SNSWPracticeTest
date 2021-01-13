@@ -19,7 +19,7 @@ export const LoadingSpinnerContainer = styled.div`
     width:120px;
     margin:auto;
     margin-top:3rem;
-    ${LoadingSpinner}{
+    LoadingSpinner{
         margin:auto;
     }
 `;

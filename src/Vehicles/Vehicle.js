@@ -3,7 +3,7 @@ import { useRouteMatch } from 'react-router-dom';
 import { VehicleContainer, DetailsContainer, VehicleWrapper } from './Vehicle.styled';
 import LoadingSpinner from '../Layout/LoadingSpinner';
 import { LoadingSpinnerContainer } from '../Registrations.styled';
-import {FormatDate, RegistrationCalculator, RegistrationStatus} from '../Registrations'
+import {FormatDate, RegistrationCalculator, RegistrationStatus} from '../FormatFunctions'
 
 
 const Vehicle = ({ details }) => {

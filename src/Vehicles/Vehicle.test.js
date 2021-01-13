@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom';
 import Vehicle from './Vehicle'
 import { render } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
-import Registrations from '../Registrations';
-import {FormatDate, RegistrationCalculator, RegistrationStatus} from '../Registrations';
+// import Registrations from '../Registrations';
+// import {FormatDate, RegistrationCalculator, RegistrationStatus} from '../Registrations';
 
 const vehicleDetails = {
     registrations: [

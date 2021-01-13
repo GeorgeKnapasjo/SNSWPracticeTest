@@ -1,9 +1,10 @@
 import React from 'react';
-import Vehicle from './Vehicle'
+import ReactDOM from 'react-dom';
+import Vehicle from './Vehicles/Vehicle'
 import { render } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
-import Registrations from '../Registrations';
-import {FormatDate, RegistrationCalculator, RegistrationStatus} from '../Registrations';
+import Registrations from './Registrations';
+import {FormatDate, RegistrationCalculator, RegistrationStatus} from './FormatFunctions';
 
 //SEPARATE TEST FILE CREATED TO TEST FUNCTION CALLS 
 //AS MOCKING IN THE SAME FILE WAS CAUSING OTHER TESTS TO FAIL
@@ -69,14 +70,34 @@ Object.defineProperty(window, 'location', {
 });
 
 
-jest.mock('../Registrations.js', () => ({
-    ...jest.requireActual('../Registrations.js'),
-    FormatDate: jest.fn(),
-    RegistrationCalculator: jest.fn(),
+jest.mock('./FormatFunctions.js', () => ({
+    ...jest.requireActual('./FormatFunctions.js'),
+    FormatDate:  jest.fn(),
+    RegistrationCalculator:jest.fn(),
     RegistrationStatus: jest.fn()
 }));
 
 describe('Functions are called', () => {
+    describe('<Registraions/>', ()=>{
+        it('Renders', ()=>{
+            const div = document.createElement('div');
+            ReactDOM.render(<Registrations vehicleDetails={vehicleDetails} loading={false} />, div);
+        })
+        it('calls FormatDate with correct date', () => {
+            render(<Registrations vehicleDetails={vehicleDetails} loading={false} />);
+            expect(FormatDate).toHaveBeenCalled();
+        });
+        it('calls FormatDate with correct date', () => {
+            render(<Registrations vehicleDetails={vehicleDetails} loading={false}/>);
+            expect(RegistrationCalculator).toHaveBeenCalled();
+        });
+        it('calls FormatDate with correct date', () => {
+            render(<Registrations vehicleDetails={vehicleDetails} loading={false}/>);
+            expect(RegistrationStatus).toHaveBeenCalled();
+        });
+    });
+
+describe('<Vehicle/>', () => {
     it('calls FormatDate with correct date', () => {
         render(<Vehicle details={vehicleDetails} />);
         expect(FormatDate).toHaveBeenCalled();
@@ -90,3 +111,6 @@ describe('Functions are called', () => {
         expect(RegistrationStatus).toHaveBeenCalled();
     });
 });
+
+});
+
