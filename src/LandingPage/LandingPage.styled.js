@@ -4,8 +4,9 @@ export const BannerWrapper = styled.div`
     display:flex;
     img{
         width:100vw;
+        object-fit:cover;
+        height:auto;
         position:absolute;
-
     }
     h1{
         color:white;
@@ -22,6 +23,9 @@ export const BannerWrapper = styled.div`
         margin-left:4rem;
     }
     @media(max-width:1000px){
+        img{
+            height:300px;
+        }
         h1{
             margin-top:2rem;
             margin-left:2rem;

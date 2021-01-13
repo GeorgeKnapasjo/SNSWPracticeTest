@@ -18,31 +18,43 @@ export const VehicleContainer = styled.div`
     width:80vw;
     display:flex;
     flex-direction:row;
+    flex-wrap:wrap;
     margin:auto;
     padding:1rem;
     padding-bottom:2rem;
     border-radius:15px;
     box-shadow:0 0 4px 2px #dee3e5;
-    h4{
-        display:inline;
+    border: 1px solid #d5d5d5;
+    @media(max-width:890px){
+        flex-direction:column;
     }
+
+`;
+
+export const DetailsContainer = styled.div`
+    width:25vw;
+    margin-left:auto;
+    margin-right:auto;
     h2{
-        padding:1rem;
-        margin-bottom:2rem;
+        width:100%;
+        padding-top:2rem;
+        padding-bottom:1.5rem;
+        padding-left:3rem;
     }
     p{
-        margin-left:-4rem;
-        padding-bottom:1rem;
+        display:inline-block;
+        width:100%;
+        margin-bottom:0;
     }
-    border: 1px solid #d5d5d5
-`;
-
-export const VehicleDetails = styled.div`
-    margin-left:auto;
-    margin-right:auto;
-`;
-
-export const RegistrationDetails = styled.div`
-    margin-left:auto;
-    margin-right:auto;
+    h4{
+        display:inline-block;
+    }
+    @media(max-width:890px){
+        width:50vw;
+        h2{
+            padding-left:0;
+            text-align:center;
+        }
+    }
+    
 `;
