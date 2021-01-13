@@ -8,7 +8,6 @@ import Hatch from './imgs/Hatch.png'
 import SUV from './imgs/SUV.png'
 import Wagon from './imgs/Wagon.png'
 
-
 export const FormatDate = (expiryDate) => {
     var date = new Date(expiryDate);
     date.setDate(date.getDate() - 1);

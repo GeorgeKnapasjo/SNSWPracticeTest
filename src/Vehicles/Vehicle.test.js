@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom';
 import Vehicle from './Vehicle'
 import { render } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
-import { FormatDate, RegistrationCalculator, RegistrationStatus } from '../Registrations'
-import Registrations from '../Registrations'
+import Registrations from '../Registrations';
+import {FormatDate, RegistrationCalculator, RegistrationStatus} from '../Registrations';
 
 const vehicleDetails = {
     registrations: [
@@ -67,37 +67,11 @@ Object.defineProperty(window, 'location', {
     }
 });
 
-jest.mock('../Registrations.js', () => ({
-    ...jest.requireActual('../Registrations.js'),
-    FormatDate: jest.fn(),
-    RegistrationCalculator: jest.fn(),
-    RegistrationStatus: jest.fn()
-}));
-// const FromatDateSpy = jest.spyOn(Registrations, 'FormatDate')
-
-describe('Functions are called', () => {
-    it('calls FormatDate with correct date', () => {
-        render(<Vehicle details={vehicleDetails} />);
-        expect(FormatDate).toHaveBeenCalled();
-    });
-    it('calls FormatDate with correct date', () => {
-        render(<Vehicle details={vehicleDetails} />);
-        expect(RegistrationCalculator).toHaveBeenCalled();
-    });
-    it('calls FormatDate with correct date', () => {
-        render(<Vehicle details={vehicleDetails} />);
-        expect(RegistrationStatus).toHaveBeenCalled();
-    });
-});
-
-jest.clearAllMocks();
-
 describe('<Vehicle/>', () => {
     it('Renders', () => {
         const div = document.createElement('div');
         ReactDOM.render(<Vehicle details={vehicleDetails} />, div);
     });
-    describe('Displays correct vehicle details', () => {
 
         it('Displays the correct vehicles details', () => {
             const { getByTestId } = render(<Vehicle details={vehicleDetails} />);
@@ -146,6 +120,6 @@ describe('<Vehicle/>', () => {
             expect(getByTestId('registration-insurer-code')).toHaveTextContent(27);
         });
     });
-});
+
 
 
