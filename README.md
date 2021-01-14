@@ -6,4 +6,4 @@
 ### 3. Enjoy my beautiful application :)
 
 ## Additional step
-### Run npm run start!
+### Run npm run test to run all tests
