@@ -30,26 +30,6 @@ const vehicleDetails = {
                 name: 'NRMA',
                 code: 27
             }
-        },
-        {
-            plate_number: 'DEF123',
-            registration: {
-                expired: false,
-                expiry_date: '2021-09-12T23:15:30.000Z'
-            },
-            vehicle: {
-                type: 'Hatch',
-                make: 'Holden',
-                model: 'Astra',
-                colour: 'Black',
-                vin: '67891FGHIJ',
-                tare_weight: '1340',
-                gross_weight: '1400'
-            },
-            insurer: {
-                name: 'Allianz',
-                code: 32
-            }
         }
     ]
 }
@@ -86,14 +66,17 @@ describe('Functions are called', () => {
         it('calls FormatDate with correct date', () => {
             render(<Registrations vehicleDetails={vehicleDetails} loading={false} />);
             expect(FormatDate).toHaveBeenCalled();
+            expect(FormatDate).toHaveBeenLastCalledWith('2021-07-20T23:15:30.000Z');
         });
         it('calls FormatDate with correct date', () => {
             render(<Registrations vehicleDetails={vehicleDetails} loading={false}/>);
             expect(RegistrationCalculator).toHaveBeenCalled();
+            expect(RegistrationCalculator).toHaveBeenLastCalledWith('2021-07-20T23:15:30.000Z');
         });
         it('calls FormatDate with correct date', () => {
             render(<Registrations vehicleDetails={vehicleDetails} loading={false}/>);
             expect(RegistrationStatus).toHaveBeenCalled();
+            expect(RegistrationStatus).toHaveBeenLastCalledWith('2021-07-20T23:15:30.000Z');
         });
     });
 
@@ -101,14 +84,17 @@ describe('<Vehicle/>', () => {
     it('calls FormatDate with correct date', () => {
         render(<Vehicle details={vehicleDetails} />);
         expect(FormatDate).toHaveBeenCalled();
+        expect(FormatDate).toHaveBeenLastCalledWith('2021-07-20T23:15:30.000Z');
     });
     it('calls FormatDate with correct date', () => {
         render(<Vehicle details={vehicleDetails} />);
         expect(RegistrationCalculator).toHaveBeenCalled();
+        expect(RegistrationCalculator).toHaveBeenLastCalledWith('2021-07-20T23:15:30.000Z');
     });
     it('calls FormatDate with correct date', () => {
         render(<Vehicle details={vehicleDetails} />);
         expect(RegistrationStatus).toHaveBeenCalled();
+        expect(RegistrationStatus).toHaveBeenLastCalledWith('2021-07-20T23:15:30.000Z');
     });
 });
 
